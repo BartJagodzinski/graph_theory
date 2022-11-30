@@ -38,9 +38,7 @@ public:
 		return *it;
 	}
 
-	std::map<Vertex*, int>& GetEdges() {
-		return _edges;
-	}
+	std::map<Vertex*, int>& GetEdges() { return _edges; }
 
 	bool IsConnected(Vertex* V) {
 		if (_edges.find(V) != _edges.end()) return true;
@@ -61,9 +59,7 @@ public:
 			return it->second;
 	}
 
-	void AddEdge(Vertex* V, int weight) {
-		_edges.insert(std::make_pair(V, weight));
-	}
+	void AddEdge(Vertex* V, int weight) { _edges.insert(std::make_pair(V, weight));	}
 
 	void AddNeighbour(Vertex* V, int weight, bool dir) {
 		_edges.insert(std::make_pair(V, weight));
