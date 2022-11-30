@@ -23,17 +23,12 @@ public:
 		return *it;
 	}
 
-	std::map<Vertex*, int>& GetEdges() {
-		return _edges;
-	}
+	std::map<Vertex*, int>& GetEdges() { return _edges; }
 
-	void AddEdge(Vertex *V, int weight) {
-		_edges.insert(std::make_pair(V, weight));
-	}
+	void AddEdge(Vertex *V, int weight) { _edges.insert(std::make_pair(V, weight));	}
 
 	void AddNeighbour(Vertex* V, int weight, bool dir) {
-		_edges.insert(std::make_pair(V,weight));
-		
+		_edges.insert(std::make_pair(V,weight));		
 		if(!dir) V->AddEdge(this, weight);
 	}
 
@@ -114,7 +109,7 @@ public:
 
 int main() {
 	// NearestNeighbour change N to 7
-	/*
+	//*
 	Vertex* a = new Vertex(0); Vertex* b = new Vertex(1); Vertex* c = new Vertex(2);
 	Vertex* d = new Vertex(3); Vertex* e = new Vertex(4); Vertex* f = new Vertex(5); Vertex* g = new Vertex(6);
 
@@ -137,7 +132,7 @@ int main() {
 		
 	Graph graph(G);
 	graph.NearestNeighbour(f);
-	*/
+	//*/
 
 	// BFS change N to 4
 	/*
