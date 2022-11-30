@@ -26,9 +26,9 @@ public:
 
 	void print() {
 		std::cout << _id << ": " << std::endl;
-		for (auto el : _edges) {
+		for (auto el : _edges)
 			std::cout << std::get<0>(el)->getId() << "  |   #_" << std::get<1>(el) << "  |   $_" << std::get<2>(el) << std::endl;
-		}
+		
 		std::cout << std::endl;
 	}
 
@@ -54,11 +54,8 @@ public:
 	}
 
 	void addPhoeromone_2(Vertex* V, double p) {
-		for (auto &el : _edges) {
-			if (std::get<0>(el)->getId() == V->getId()) {
-				std::get<2>(el) += p;
-			}
-		}
+		for (auto &el : _edges)
+			if (std::get<0>(el)->getId() == V->getId()) { std::get<2>(el) += p; }
 	}
 
 	void evaporatePheromone() { for (auto &el : _edges) { if(std::get<2>(el) > 0.3) std::get<2>(el) -= evaporate; } }
@@ -101,9 +98,9 @@ public:
 
 		for (size_t i = 0; i < e.size(); i++) {
 			bool b = true;
-			for (size_t j = 0; j < _visited.size(); j++) {
+			for (size_t j = 0; j < _visited.size(); j++)
 				if (std::get<0>(e[i]) == _visited[j]) b = false;
-			}
+			
 			if(b)edges.push_back(e[i]);
 		}
 
@@ -219,9 +216,8 @@ int main() {
 	size_t iter = 0;
 
 	while (iter < MAX) {
-		for (size_t i = 0; i < N; i++) {
+		for (size_t i = 0; i < N; i++)
 			A[i]->setPosition(G[i]);
-		}
 
 		ants.run();
 
@@ -230,8 +226,6 @@ int main() {
 
 		iter++;
 	}
-
-	
 
 	return EXIT_SUCCESS;
 }
