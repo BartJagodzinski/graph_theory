@@ -1,4 +1,4 @@
-This repository contains implementations of several popular algorithms for solving optimization problems:
+#This repository contains implementations of several popular algorithms for solving optimization problems:
 
 The A* algorithm is a popular search algorithm that combines the strengths of both breadth-first search and depth-first search.
 It uses a heuristic function to guide the search and prioritize the most promising paths, resulting in faster convergence to the optimal solution.
